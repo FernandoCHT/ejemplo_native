@@ -54,7 +54,7 @@ export default function FormSuc(toast){
                             creadoPor: firebase.auth().currentUser.uid,
                         })
                         .then(()=>{
-                            navegacion.navigate("sucursales");
+                            navegacion.navigate("sucursal");
                         }).catch(()=>{
                             toastRef.current.show("No es posible registrar la sucursal");
                         })

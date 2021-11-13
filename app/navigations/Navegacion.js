@@ -8,6 +8,7 @@ import Favoritos from "../screens/Favoritos";
 import TopSucursales from "../screens/TopSucursales"
 import Busquedas from "../screens/Busquedas";
 import RutasCuenta from "./RutasCuenta";
+import RutasComentarios from "./RutasComentarios";
 
 const Tab = createBottomTabNavigator();
 
@@ -37,6 +38,10 @@ export default function Navegacion(){
                 name="sucursales" 
                 component={RutasSucursales}
                 options={{headerShown: false}}/>
+                <Tab.Screen
+                 name="comentarios" 
+                 component={RutasComentarios}
+                 options={{headerShown: false}}/>
                 <Tab.Screen 
                 name="favoritos"  
                 component={Favoritos}
@@ -65,6 +70,9 @@ function opciones(ruta, color){
         case "sucursales":
             //para buscar iconos https://materialdesignicons.com/
             iconName="home";
+            break;
+        case "comentarios":
+            iconName="comment";
             break;
         case "favoritos":
             iconName="favorite";
