@@ -16,7 +16,6 @@ export default function Sucursales() {
   const [sucursales, setSucursales] = useState([]);
   const [totalSuc, setTotalSuc] = useState(0);
   const [puntero, setPuntero] = useState(null);
-  console.log(sucursales);
 
   const [usuario, setUsuario] = useState(null);
 
