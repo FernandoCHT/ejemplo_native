@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Image } from "react-native-elements";
 import { size } from "lodash";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ListaSucursales(propiedades) {
   const { sucursales } = propiedades;
@@ -34,10 +35,12 @@ function Sucursales(propiedades) {
   //Recibe la lista de sucursales
   const { sucursales } = propiedades;
   //en cada iteración obtiene los datos de la sucursal
-  const { imagenes, nombre, direccion, descripcion } = sucursales.item;
+  const { imagenes, nombre, direccion, descripcion, id } = sucursales.item;
+  //definimos el acceso a las rutas de sucursales
+  const navegacion = useNavigation();
   //Método que se ejecutará al dar clic a los items de la lista
   const consultarRestaurante = () => {
-    console.log("consultando");
+    navegacion.navigate("ver_sucursal", { id, nombre });
   };
   return (
     //Agregamos el clic a cada item al dar clic el item se opaca
