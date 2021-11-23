@@ -4,6 +4,8 @@ import Toast from "react-native-easy-toast";
 import firebase from "firebase/compat/app";
 
 import InfoUsuario from "../../components/Account/InfoUsuario";
+//Importamos el componente de de OpcionesCuenta
+import OpcionesCuenta from "../../components/Account/OpcionesCuenta";
 
 export default function UserLogged() {
   const [userInfo, setUserInfo] = useState(null);
@@ -28,6 +30,11 @@ export default function UserLogged() {
           setCargando={setCargando}
         />
       )}
+      <OpcionesCuenta
+        userInfo={userInfo}
+        toastRef={toastRef}
+        setRealoadUserInfo={setRealoadUserInfo}
+      />
       <Button title="Cerrar sesión" onPress={() => firebase.auth().signOut()} />
       <Toast ref={toastRef} position="center" opacity={0.9} />
     </View>

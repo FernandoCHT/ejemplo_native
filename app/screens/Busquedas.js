@@ -63,6 +63,7 @@ function Sucursal(propiedades) {
   const { sucursal, navigation } = propiedades;
 
   const { id, nombre, imagenes } = sucursal.item;
+
   return (
     <ListItem
       onPress={() => navigation.navigate("ver_sucursal", { id, nombre })}
